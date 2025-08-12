@@ -50,6 +50,7 @@
         const chatInput = document.getElementById('chatInput');
         const sendButton = document.getElementById('sendButton');
         const typingIndicator = document.getElementById('typingIndicator');
+        const model={model: 'claude-sonnet-4', stream: true};
 
         // Auto-resize textarea
         chatInput.addEventListener('input', function() {
@@ -104,7 +105,7 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        async function streamClaudeResponse(query, model = 'claude-3-haiku-20240307') {
+        async function streamClaudeResponse(query, model) {
             try {
                 // Cek apakah puter tersedia
                 if (typeof puter === 'undefined') {
