@@ -47,3 +47,18 @@ puterAI(
     model,
     handleAIResponse
 );
+
+
+async function streamClaudeResponse(model = 'claude-sonnet-4') {
+    const response = await puter.ai.chat(
+        "Write a detailed essay on the impact of artificial intelligence on society", 
+        {model: model, stream: true}
+    );
+    
+    for await (const part of response) {
+        puter.print(part?.text);
+    }
+}
+
+// Use Claude Sonnet 4 (default)
+streamClaudeResponse();
