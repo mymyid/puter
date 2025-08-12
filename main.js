@@ -54,7 +54,7 @@ async function streamClaudeResponse(query,model) {
     const response = await puter.ai.chat(
         query, models
     );
-    
+    let fullText = '';
     for await (const part of response) {
         fullText += part.text;
         puter.print(part?.text);
