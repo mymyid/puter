@@ -6,6 +6,7 @@ await addJS("https://js.puter.com/v2/");
 
 let query="Explain quantum computing in simple terms";
 let model={model: 'claude-sonnet-4'};
+let models={model: 'claude-sonnet-4', stream: true};
 
 
 export function puterAI(query,model,responseFunction) {
@@ -49,10 +50,9 @@ function handleAIResponse(text, error) {
 //);
 
 
-async function streamClaudeResponse(model = 'claude-sonnet-4') {
+async function streamClaudeResponse(query,model) {
     const response = await puter.ai.chat(
-        "Write a detailed essay on the impact of artificial intelligence on society", 
-        {model: model, stream: true}
+        query, models
     );
     
     for await (const part of response) {
@@ -61,4 +61,4 @@ async function streamClaudeResponse(model = 'claude-sonnet-4') {
 }
 
 // Use Claude Sonnet 4 (default)
-streamClaudeResponse();
+streamClaudeResponse(query,models);
