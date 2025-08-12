@@ -56,8 +56,12 @@ async function streamClaudeResponse(query,model) {
     );
     
     for await (const part of response) {
+        fullText += part.text;
         puter.print(part?.text);
+        console.log(part.text);
     }
+    console.log('Streaming complete. Full text:', fullText);
+    return fullText;
 }
 
 // Use Claude Sonnet 4 (default)
