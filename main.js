@@ -42,11 +42,11 @@ function handleAIResponse(text, error) {
 }
 
 // Panggil fungsi
-puterAI(
-    query,
-    model,
-    handleAIResponse
-);
+//puterAI(
+//    query,
+//    model,
+//    handleAIResponse
+//);
 
 
 async function streamClaudeResponse(model = 'claude-sonnet-4') {
@@ -61,4 +61,4 @@ async function streamClaudeResponse(model = 'claude-sonnet-4') {
 }
 
 // Use Claude Sonnet 4 (default)
-//streamClaudeResponse();
+streamClaudeResponse();
