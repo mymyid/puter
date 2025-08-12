@@ -19,7 +19,7 @@ export function puterAI(query,model,responseFunction) {
             console.log('Text:', text);
             
             // Print ke Puter UI
-            puter.print(text);
+            //puter.print(text);
 
             // Panggil callback function dengan text
             responseFunction(text);
