@@ -61,4 +61,4 @@ async function streamClaudeResponse(model = 'claude-sonnet-4') {
 }
 
 // Use Claude Sonnet 4 (default)
-streamClaudeResponse();
+//streamClaudeResponse();
