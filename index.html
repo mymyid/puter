@@ -1,11 +1,29 @@
+<!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
 <body>
-    <script src="https://js.puter.com/v2/"></script>
-    <script>
-        puter.ai.chat("Explain quantum computing in simple terms", {model: 'claude-sonnet-4'})
-            .then(response => {
-                puter.print(response.message.content[0].text);
-            });
-    </script>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+            <button id="submit">Login</button>
+        </div>
+    </div>
+
+    
 </body>
 </html>
