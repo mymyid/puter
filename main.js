@@ -34,7 +34,7 @@ export function puterAI(query,model,responseFunction) {
 // Callback function
 function handleAIResponse(text, error) {
     if (error) {
-        console.error('AI Error:', error);
+        console.error('AI Error:', error.error.message);
         return;
     }
     
