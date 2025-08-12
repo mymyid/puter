@@ -115,7 +115,6 @@
                 showTypingIndicator();
                 
                 const response = await puter.ai.chat(query, model);
-                
                 hideTypingIndicator();
                 
                 // Buat message container untuk streaming
@@ -167,7 +166,7 @@
             chatInput.style.height = 'auto';
             
             // Kirim ke Puter AI dan stream response
-            await streamClaudeResponse(message);
+            await streamClaudeResponse(message,model);
             
             // Re-enable input
             sendButton.disabled = false;
